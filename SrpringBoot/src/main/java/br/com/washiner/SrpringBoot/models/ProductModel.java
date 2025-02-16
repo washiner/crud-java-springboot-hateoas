@@ -1,6 +1,7 @@
 package br.com.washiner.SrpringBoot.models;
 
 import jakarta.persistence.*;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -9,7 +10,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "TB_PRODUCTS")
-public class ProductModel implements Serializable {
+public class ProductModel extends RepresentationModel<ProductModel> implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L; //A interface Serializable permite transformar objetos em bytes para armazenamento ou transferência, e o serialVersionUID garante compatibilidade entre versões da classe, mas no JPA geralmente não é obrigatório.
 
